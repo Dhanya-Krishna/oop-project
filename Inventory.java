@@ -1,11 +1,10 @@
-
-    import java.util.HashMap;
+package oopproject;
+import java.util.HashMap;
 import java.util.Map;
-
-    public class Inventory {
+import java.util.*;
+public class Inventory {
         private Map<Integer, Integer> stock;
         private Map<Integer, Product> products;
-
         public Inventory() {
             stock = new HashMap<>();
             products = new HashMap<>();
@@ -33,5 +32,12 @@ import java.util.Map;
         public int getQuantity(int id) {
             return stock.getOrDefault(id, 0);
         }
+        public Set<Integer> getAllProductIds() {
+            return products.keySet();
+        }
+        public Collection<Product> getAllProducts() {
+            return products.values();
+        }
     }
+
 
